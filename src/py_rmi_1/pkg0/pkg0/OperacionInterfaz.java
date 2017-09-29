@@ -7,13 +7,13 @@ package py_rmi_1.pkg0.pkg0;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import modell.Muser;
 
 /**
  *
  * @author DIGETI
  */
 public interface OperacionInterfaz extends Remote {
-    public String correr() throws RemoteException;
-    public String   comer() throws RemoteException; 
-    public String volar() throws RemoteException;
+    public ArrayList<Muser> Lista() throws RemoteException;
 }

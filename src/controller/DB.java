@@ -16,9 +16,9 @@ import java.sql.Statement;
 public class DB {
 
 String driver = "org.postgresql.Driver";
-String connectString = "jdbc:postgresql://localhost:5432/test01";
+String connectString = "jdbc:postgresql://localhost:5432/prueba";
 String user = "postgres";
-String password = "123456";
+String password = "system";
 static Connection con;
 static Statement stmt;
 public DB(){

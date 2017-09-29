@@ -5,11 +5,14 @@
  */
 package py_rmi_1.pkg0.pkg0;
 
+import controller.Cuser;
 import java.net.InetAddress;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import modell.Muser;
 
 /**
  *
@@ -23,7 +26,7 @@ public class serverrmi extends UnicastRemoteObject implements OperacionInterfaz 
     public serverrmi() throws RemoteException{};
     
     public static void main(String[] args) throws Exception {
-        new serverrmi().iniciarServidor();
+        (new serverrmi()).iniciarServidor();
     }
 
     public void iniciarServidor(){
@@ -35,21 +38,11 @@ public class serverrmi extends UnicastRemoteObject implements OperacionInterfaz 
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
-    @Override
-    public String correr() throws RemoteException {
-            
-        return "Listos para correr";
-    }
+    }    
 
     @Override
-    public String comer() throws RemoteException {
-        return "Listos para comer";
-    }
-
-    @Override
-    public String volar() throws RemoteException {
-        return "Listos para volar";
+    public ArrayList<Muser> Lista() throws RemoteException {
+       return new Cuser().lista();
     }
     
 }
